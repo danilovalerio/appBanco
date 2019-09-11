@@ -1,18 +1,11 @@
 package com.example.testesantanderapp.views
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import com.example.testesantanderapp.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.testesantanderapp.R
 import com.example.testesantanderapp.api.Endpoint
 import com.example.testesantanderapp.util.NetworkUtils
-import com.example.testesantanderapp.DadoModel
-import com.example.testesantanderapp.model.DadosModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ContaActivity : AppCompatActivity() {
 

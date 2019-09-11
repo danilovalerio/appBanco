@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.DetalhesActivity"></activity>
+        <activity
+            android:name=".views.DetalhesActivity"
+            android:theme="@style/Theme.AppCompat.LightFullScreen"></activity>
         <activity android:name=".views.ContaActivity" />
         <activity
             android:name=".views.MainActivity"

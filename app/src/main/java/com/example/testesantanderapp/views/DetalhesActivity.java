@@ -1,6 +1,7 @@
 package com.example.testesantanderapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,9 @@ import com.example.testesantanderapp.adapter.AdapterTransacoes;
 import com.example.testesantanderapp.model.DadosModel;
 import com.example.testesantanderapp.model.Transaction;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class DetalhesActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
+    private List<Transaction> listTransactions = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +39,17 @@ public class DetalhesActivity extends AppCompatActivity {
         //instanciando o recyclerView
         mRecyclerView = findViewById(R.id.dados_list_recyclerview);
 
+        //Listagem de transações
+        this.criarListTransaction();
+
         //Configurar adapter
-        AdapterTransacoes adapterTransacoes = new AdapterTransacoes();
+        AdapterTransacoes adapterTransacoes = new AdapterTransacoes(listTransactions);
 
         //Configurar RecyclerView
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(adapterTransacoes);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -74,5 +83,16 @@ public class DetalhesActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void criarListTransaction(){
+        Transaction tran = new Transaction("Titulo","Cond","12/12/2012",333.0);
+        this.listTransactions.add(tran);
+        Transaction tran2 = new Transaction("Titulo","Cond","12/12/2012",333.0);
+        this.listTransactions.add(tran2);
+        Transaction tran3 = new Transaction("Titulo","Cond","12/12/2012",333.0);
+        this.listTransactions.add(tran3);
+        Transaction tran4 = new Transaction("Titulo","Cond","12/12/2012",333.0);
+        this.listTransactions.add(tran4);
     }
 }
