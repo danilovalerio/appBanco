@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="0dp"
     android:orientation="vertical"
     tools:context=".views.DetalhesActivity">
 
@@ -15,7 +16,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logout2" />
 
     <TextView
         android:id="@+id/tvNomeDoCliente"
@@ -24,10 +36,10 @@
         android:layout_marginStart="@dimen/marginStart"
         android:layout_marginTop="40dp"
         android:text="Jose da Silva Teste"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout"
         android:textColor="@color/textColor"
-        android:textSize="@dimen/text_titulo1"/>
+        android:textSize="@dimen/text_titulo1"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
 
     <TextView
         android:id="@+id/tvTituloConta"
@@ -48,10 +60,10 @@
         android:layout_marginStart="@dimen/marginStart"
         android:layout_marginTop="13dp"
         android:text="2050/01.111222-4"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/tvTituloConta"
         android:textColor="@color/textColor"
-        android:textSize="@dimen/text_titulo1"/>
+        android:textSize="@dimen/text_titulo1"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/tvTituloConta" />
 
     <TextView
         android:id="@+id/tvTituloSaldo"
@@ -72,10 +84,10 @@
         android:layout_marginStart="@dimen/marginStart"
         android:layout_marginTop="13dp"
         android:text="R$ 1.000,00"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/tvTituloSaldo"
         android:textColor="@color/textColor"
-        android:textSize="@dimen/text_titulo1"/>
+        android:textSize="@dimen/text_titulo1"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/tvTituloSaldo" />
 
 
     <TextView
@@ -87,25 +99,16 @@
         android:text="Recentes"
         android:textColor="#485465 "
         android:textSize="18dp"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        android:layout_marginStart="@dimen/marginStart"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dados_list_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloRecentes"
             tools:listitem="@layout/adapter_transacoes"
-            app:layout_constraintTop_toBottomOf="@+id/tvTituloRecentes">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imageView2"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:srcCompat="@drawable/logo_bank"-->
-    <!--        tools:layout_editor_absoluteX="30dp"-->
-    <!--        tools:layout_editor_absoluteY="30dp" />-->
-
+            android:scrollbars="vertical"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
