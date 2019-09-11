@@ -9,4 +9,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="informe_todos_os_campos">Preencha todos os campos!</string>
+    <string name="erro_inesperado">Algo deu muito ruim, Tente novamente!</string>
+    <string name="email_ja_cadastrado">E-mail já cadastrado</string>
+    <string name="cpf_cadastrado">CPF já cadastrado!</string>
 </resources>
